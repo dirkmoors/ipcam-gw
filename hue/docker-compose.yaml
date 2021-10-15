@@ -1,0 +1,12 @@
+version: '3.9'
+services:
+  app:
+    build: .
+    ports:
+      - "8888:80"
+    volumes:
+      - ./src/:/var/app
+      - /var/hue/:/var/hue/
+    environment:
+      DEBUG: "True"
+      HUE_BRIDGE_IP: "192.168.0.5"
