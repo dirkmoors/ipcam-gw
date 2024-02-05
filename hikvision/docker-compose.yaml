@@ -7,5 +7,5 @@ services:
     volumes:
       - ./src/:/var/app
       - /tmp:/tmp
-    environment:
-      DEBUG: "True"
+#    environment:
+#      DEBUG: "True"

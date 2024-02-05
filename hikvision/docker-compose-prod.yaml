@@ -1,0 +1,62 @@
+version: '3.9'
+services:
+  hikvision_rechts:
+    image: hikvisiongw
+    ports:
+      - "21231:21"
+    environment:
+        TRIGGER_MODE: 'tcp'
+        TRIGGER_TCP_HOST: '192.168.0.11'
+        TRIGGER_TCP_PORT: 4999
+        TRIGGER_TCP_PAYLOAD: 'rechts'
+      # TRIGGER_HTTP_URL: "http://192.168.0.29:18088/ptz?command=gotopreset&index=5&channel=Oprit&login=root&password=2CC991F5DDA78DBD74AADCF8C2401F6C"
+  hikvision_links:
+    image: hikvisiongw
+    ports:
+      - "21233:21"
+    environment:
+      TRIGGER_MODE: 'tcp'
+      TRIGGER_TCP_HOST: '192.168.0.11'
+      TRIGGER_TCP_PORT: 4999
+      TRIGGER_TCP_PAYLOAD: 'links'
+      # TRIGGER_HTTP_URL: "http://192.168.0.29:18088/ptz?command=gotopreset&index=4&channel=Oprit&login=root&password=2CC991F5DDA78DBD74AADCF8C2401F6C"
+  hikvision_vooraan:
+    image: hikvisiongw
+    ports:
+      - "21235:21"
+    environment:
+      TRIGGER_MODE: 'tcp'
+      TRIGGER_TCP_HOST: '192.168.0.11'
+      TRIGGER_TCP_PORT: 4999
+      TRIGGER_TCP_PAYLOAD: 'vooraan'
+      # TRIGGER_HTTP_URL: "http://192.168.0.29:18088/ptz?command=gotopreset&index=1&channel=Oprit&login=root&password=2CC991F5DDA78DBD74AADCF8C2401F6C"
+  hikvision_oprit:
+    image: hikvisiongw
+    ports:
+      - "21237:21"
+    environment:
+      TRIGGER_MODE: 'tcp'
+      TRIGGER_TCP_HOST: '192.168.0.11'
+      TRIGGER_TCP_PORT: 4999
+      TRIGGER_TCP_PAYLOAD: 'oprit'
+      # TRIGGER_HTTP_URL: "http://192.168.0.29:18088/ptz?command=gotopreset&index=1&channel=Oprit&login=root&password=2CC991F5DDA78DBD74AADCF8C2401F6C"
+  hikvision_achteraan:
+    image: hikvisiongw
+    ports:
+      - "21234:21"
+    environment:
+      TRIGGER_MODE: 'tcp'
+      TRIGGER_TCP_HOST: '192.168.0.11'
+      TRIGGER_TCP_PORT: 4999
+      TRIGGER_TCP_PAYLOAD: 'achteraan'
+      # TRIGGER_HTTP_URL: "http://192.168.0.29:18088/ptz?command=gotopreset&index=1&channel=Oprit&login=root&password=2CC991F5DDA78DBD74AADCF8C2401F6C"
+  hikvision_boomgaard_straatkant:
+    image: hikvisiongw
+    ports:
+      - "21232:21"
+    environment:
+      TRIGGER_MODE: 'tcp'
+      TRIGGER_TCP_HOST: '192.168.0.11'
+      TRIGGER_TCP_PORT: 4999
+      TRIGGER_TCP_PAYLOAD: 'boomgaard-straatkant'
+      # TRIGGER_HTTP_URL: "http://192.168.0.29:18088/ptz?command=gotopreset&index=1&channel=Oprit&login=root&password=2CC991F5DDA78DBD74AADCF8C2401F6C"
